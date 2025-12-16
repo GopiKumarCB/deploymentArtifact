@@ -1,0 +1,16 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: My workflow
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+jobs:
+  deploy:
+    steps:
+      - uses: cloudbees-io/register-deployed-artifact@v2
+        with:
+          labels: gk
+          artifact-id: 7d701171-ae64-487f-97fb-6729b6dc8159
+          target-environment: GK-Stage
