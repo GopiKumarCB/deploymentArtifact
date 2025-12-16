@@ -6,6 +6,15 @@ on:
     branches:
       - "main"
   workflow_dispatch:
+     inputs:
+      Environment:
+        type: choice
+        options:
+        - GK-Stage
+        - GK-Prod
+        default: GK-Stage
+        required: true
+        description: Choose environment where test will run
 jobs:
   deploy:
     steps:
@@ -13,4 +22,4 @@ jobs:
         with:
           labels: gk
           artifact-id: 7d701171-ae64-487f-97fb-6729b6dc8159
-          target-environment: GK-Stage
+          target-environment: ${{ inputs.Environment }}
