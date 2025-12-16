@@ -13,4 +13,4 @@ jobs:
         with:
           labels: gk
           artifact-id: 7d701171-ae64-487f-97fb-6729b6dc8159
-          target-environment: GK-Stage, GK-Prod
+          target-environment: GK-Stage
